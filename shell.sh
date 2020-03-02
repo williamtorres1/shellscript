@@ -8,6 +8,7 @@ sudo rm /var/cache/apt/archives/lock;
 sudo apt-add-repository ppa:graphics-drivers/ppa
 sudo add-apt-repository ppa:git-core/ppa
 sudo add-apt-repository ppa:shutter/ppa
+sudo add-apt-repository ppa:openjdk-r/ppa
 
 sudo apt-get update
 
@@ -40,7 +41,28 @@ cd /home/${USER}/Downloads/softwares
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # discord
 wget -c https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb
-
+wget -c https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
 sudo dpkg -i *.deb
 
+# Ambiente React Native
 
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm install -g react-native-cli
+sudo apt-get install openjdk-8-jdk
+mkdir ~/Android/Sdk
+unzip commandlinetools-linux-6200805_latest.zip -d ~Android/Sdk
+
+echo Todo o script terminou, agora você precisa ir no arquivo .bashrc.
+echo Agora, coloque essas 3 linhas no COMEÇO do arquivo.
+echo && echo
+echo export ANDROID_HOME=~/Android/Sdk
+echo
+echo export PATH=$PATH:$ANDROID_HOME/tools
+echo
+echo export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+echo Agora, execute este comando:
+echo
+echo ~/Android/Sdk/tools/bin/sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.3" -y
