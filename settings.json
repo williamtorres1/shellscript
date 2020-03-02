@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 0,
+    "explorer.confirmDelete": false,
+    "files.associations": {
+        "*.sh": "shellscript"
+    },
+       
+}
