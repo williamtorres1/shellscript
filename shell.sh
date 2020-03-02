@@ -9,6 +9,7 @@ sudo apt-add-repository ppa:graphics-drivers/ppa
 sudo add-apt-repository ppa:git-core/ppa
 sudo add-apt-repository ppa:shutter/ppa
 sudo add-apt-repository ppa:openjdk-r/ppa
+sudo add-apt-repository ppa:atareao/telegram
 
 sudo apt-get update
 
@@ -20,6 +21,7 @@ sudo apt-get install manpages-dev -y
 sudo apt-get install telegram -y
 sudo apt-get install shutter -y
 sudo apt-get install qbittorrent -y
+sudo apt-get install g++ -y
 
 # Instalando programas via snap
 sudo apt install snapd -y
@@ -66,3 +68,5 @@ echo export PATH=$PATH:$ANDROID_HOME/platform-tools
 echo Agora, execute este comando:
 echo
 echo ~/Android/Sdk/tools/bin/sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.3" -y
+
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev"' | sudo tee /etc/udev/rules.d/51-android-usb.rules

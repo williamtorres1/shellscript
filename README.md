@@ -16,7 +16,6 @@ visual studio code
 - spotify
 - chrome
 - telegram
-- whatsapp
 - shutter
 - qbittorrent
 
