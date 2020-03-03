@@ -55,6 +55,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g react-native-cli
 sudo apt-get install openjdk-8-jdk
+sudo npm install -g expo-cli
 mkdir ~/Android/Sdk
 unzip commandlinetools-linux-6200805_latest.zip -d ~Android/Sdk
 
