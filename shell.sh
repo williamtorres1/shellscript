@@ -10,6 +10,7 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo add-apt-repository ppa:shutter/ppa
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo add-apt-repository ppa:atareao/telegram
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 
 sudo apt-get update
 
@@ -22,6 +23,7 @@ sudo apt-get install telegram -y
 sudo apt-get install shutter -y
 sudo apt-get install qbittorrent -y
 sudo apt-get install g++ -y
+sudo apt-get install kdenlive -y
 
 # Instalando programas via snap
 sudo apt install snapd -y
