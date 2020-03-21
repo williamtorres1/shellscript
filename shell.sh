@@ -5,7 +5,7 @@ sudo rm /var/lib/dpkg/lock-frontend;
 sudo rm /var/cache/apt/archives/lock;
 
 # Adicionando novos repositórios
-sudo apt-add-repository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo add-apt-repository ppa:git-core/ppa
 sudo add-apt-repository ppa:shutter/ppa
 sudo add-apt-repository ppa:openjdk-r/ppa
