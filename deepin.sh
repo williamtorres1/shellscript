@@ -7,36 +7,12 @@ sudo rm /var/lib/dpkg/lock-frontend;
 sudo rm /var/cache/apt/archives/lock;
 
 # Permitindo que o sistema utilize repositórios
-sudo nano add-apt-repository
-echo "#!/bin/bash" >> ./add-apt-repository
-if [ $# -eq 1 ]
-then
-ppa_name=`echo “$1″ | cut -d”:” -f2 -s`
-if [ -z “$ppa_name” ]
-then
-echo “PPA name not found”
-echo “Utility to add PPA repositories in your debian machine”
-echo “$0 ppa:user/ppa-name”
-else
-echo “$ppa_name”
-echo “deb http://ppa.launchpad.net/$ppa_name/ubuntu lucid main”
->> /etc/apt/sources.list
-apt-get update >> /dev/null 2> /tmp/apt_add_key.txt
-key=`cat /tmp/apt_add_key.txt | cut -d”:” -f6 | cut -d” ” -f3`
-apt-key adv –keyserver keyserver.ubuntu.com –recv-keys $key
-rm -rf /tmp/apt_add_key.txt
-fi
-else
-echo “Utility to add PPA repositories in your debian machine”
-echo “$0 ppa:user/ppa-name”
-fi
+wget -c https://raw.githubusercontent.com/williamtorres1/ShellScript/master/add-apt-repository
 sudo mv add-apt-repository /usr/sbin && sudo chmod o+x /usr/sbin/add-apt-repository && sudo chown root:root /usr/sbin/add-apt-repository
 
 
 # Adicionando novos repositórios
 sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo add-apt-repository ppa:git-core/ppa
-sudo add-apt-repository ppa:shutter/ppa
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo add-apt-repository ppa:atareao/telegram
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable
@@ -49,25 +25,20 @@ sudo apt-get install arduino -y
 sudo apt install build-essential -y
 sudo apt-get install manpages-dev -y
 sudo apt-get install telegram -y
-sudo apt-get install shutter -y
 sudo apt-get install qbittorrent -y
 sudo apt-get install g++ -y
 sudo apt-get install kdenlive -y
 
 # Instalando programas via snap
 sudo apt install snapd -y
-
 sudo snap install code --classic
 sudo snap install insomnia
 sudo snap install vlc
 sudo snap install spotify
-
 sudo snap install photogimp
 
 # Fazendo download de programas externos
-
 mkdir /home/${USER}/Downloads/softwares
-
 cd /home/${USER}/Downloads/softwares
 
 # chrome
@@ -76,12 +47,9 @@ wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.de
 wget -c https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb
 wget -c https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
 sudo dpkg -i *.deb
+rm -Rf softwares/
 
 # Ambiente React Native
-
-sudo apt-get install zsh -y
-sudo apt-get install curl
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g react-native-cli
 sudo apt-get install openjdk-8-jdk
