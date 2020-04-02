@@ -60,17 +60,8 @@ sudo npm install -g expo-cli
 mkdir ~/Android/Sdk
 unzip commandlinetools-linux-6200805_latest.zip -d ~Android/Sdk
 
-echo Todo o script terminou, agora você precisa ir no arquivo .bashrc.
-echo Agora, coloque essas 3 linhas no COMEÇO do arquivo.
-echo && echo
-echo export ANDROID_HOME=~/Android/Sdk
-echo
-echo export PATH=$PATH:$ANDROID_HOME/tools
-echo
-echo export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-echo Agora, execute este comando:
-echo
-echo ~/Android/Sdk/tools/bin/sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.3" -y
-
+echo "export ANDROID_HOME=~/Android/Sdk" >> ./.bashrc
+echo "export PATH=$PATH:$ANDROID_HOME/tools" >> ./.bashrc
+echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ./.bashrc
+~/Android/Sdk/tools/bin/sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.3" -y
 echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev"' | sudo tee /etc/udev/rules.d/51-android-usb.rules
