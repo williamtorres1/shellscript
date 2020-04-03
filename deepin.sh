@@ -50,7 +50,8 @@ sudo dpkg -i *.deb
 rm -Rf softwares/
 
 # Ambiente React Native
-sudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_12.x | bash -
+apt-get install -y nodejs
 sudo npm install -g react-native-cli
 sudo apt-get install openjdk-8-jdk
 sudo npm install -g expo-cli
