@@ -47,7 +47,10 @@ wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.de
 # discord
 wget -c https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb
 wget -c https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
+sudo mv commandlinetools-linux-6200805_latest.zip ~/Android/Sdk
 sudo dpkg -i *.deb
+cd ..
+rm -Rf softwares
 
 # Ambiente React Native
 sudo snap install node --classic --channel=12
@@ -58,10 +61,9 @@ mkdir /home/${USER}/Android
 mkdir /home/${USER}/Android/Sdk
 cd /home/${USER}/Android/Sdk
 unzip commandlinetools-linux-6200805_latest.zip
+rm *.zip
 cd ~
 echo "export ANDROID_HOME=~/Android/Sdk" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/tools" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ./.bashrc
 ~/Android/Sdk/tools/bin/sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.3" -y
-cd /home/${USER}/Downloads/
-rm -Rf softwares
