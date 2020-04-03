@@ -1,6 +1,7 @@
 cd ~
 
 #!/bin/bash
+[ "$(whoami)" != "root" ] && exec sudo -- "$0" "$@"
 
 # Removendo travas eventuais do apt
 sudo rm /var/lib/dpkg/lock-frontend;
@@ -51,10 +52,8 @@ sudo dpkg -i *.deb
 rm -Rf softwares/
 
 # Ambiente React Native
-sudo su
 curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
-exit
 sudo npm install -g react-native-cli
 sudo apt-get install openjdk-8-jdk
 sudo npm install -g expo-cli
