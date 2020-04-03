@@ -56,9 +56,10 @@ sudo snap install node --classic --channel=12
 sudo npm install -g react-native-cli
 sudo apt-get install openjdk-8-jdk
 sudo npm install -g expo-cli
-mkdir ~/Android/Sdk
-unzip commandlinetools-linux-6200805_latest.zip -d ~Android/Sdk
-
+mkdir /home/${USER}/Android/Sdk
+cd /home/${USER}/Android/Sdk
+unzip commandlinetools-linux-6200805_latest.zip
+cd ~
 echo "export ANDROID_HOME=~/Android/Sdk" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/tools" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ./.bashrc
