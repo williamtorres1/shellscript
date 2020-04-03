@@ -19,10 +19,11 @@ sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 
 sudo apt-get update
 
+sudo apt-get install curl -y
 sudo apt-get install git -y
 sudo apt-get install virtualbox -y
 sudo apt-get install arduino -y
-sudo apt install build-essential -y
+sudo apt-get install build-essential -y
 sudo apt-get install manpages-dev -y
 sudo apt-get install telegram -y
 sudo apt-get install qbittorrent -y
@@ -50,8 +51,10 @@ sudo dpkg -i *.deb
 rm -Rf softwares/
 
 # Ambiente React Native
+sudo -i
 curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
+exit
 sudo npm install -g react-native-cli
 sudo apt-get install openjdk-8-jdk
 sudo npm install -g expo-cli
@@ -62,4 +65,3 @@ echo "export ANDROID_HOME=~/Android/Sdk" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/tools" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ./.bashrc
 ~/Android/Sdk/tools/bin/sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.3" -y
-echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev"' | sudo tee /etc/udev/rules.d/51-android-usb.rules
