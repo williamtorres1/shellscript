@@ -48,7 +48,8 @@ wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.de
 wget -c https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb
 wget -c https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
 sudo dpkg -i *.deb
-rm -Rf softwares/
+cd ..
+rm -Rf softwares
 
 # Ambiente React Native
 sudo snap install node --classic --channel=12
