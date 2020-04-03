@@ -56,6 +56,7 @@ sudo snap install node --classic --channel=12
 sudo npm install -g react-native-cli
 sudo apt-get install openjdk-8-jdk
 sudo npm install -g expo-cli
+mkdir /home/${USER}/Android
 mkdir /home/${USER}/Android/Sdk
 cd /home/${USER}/Android/Sdk
 unzip commandlinetools-linux-6200805_latest.zip
