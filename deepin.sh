@@ -46,8 +46,6 @@ cd /home/${USER}/Downloads/softwares
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # discord
 wget -c https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb
-wget -c https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
-sudo mv commandlinetools-linux-6200805_latest.zip ~/Android/Sdk
 sudo dpkg -i *.deb
 cd ..
 rm -Rf softwares
@@ -60,6 +58,7 @@ sudo npm install -g expo-cli
 mkdir /home/${USER}/Android
 mkdir /home/${USER}/Android/Sdk
 cd /home/${USER}/Android/Sdk
+wget -c https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
 unzip commandlinetools-linux-6200805_latest.zip
 rm *.zip
 cd ~
