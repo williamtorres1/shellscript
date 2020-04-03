@@ -51,7 +51,7 @@ sudo dpkg -i *.deb
 rm -Rf softwares/
 
 # Ambiente React Native
-sudo -i
+sudo su
 curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 exit
