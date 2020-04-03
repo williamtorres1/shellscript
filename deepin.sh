@@ -37,6 +37,7 @@ sudo snap install insomnia
 sudo snap install vlc
 sudo snap install spotify
 sudo snap install photogimp
+sudo snap install firefox
 
 # Fazendo download de programas externos
 mkdir /home/${USER}/Downloads/softwares
