@@ -21,6 +21,7 @@ sudo apt-get update
 
 sudo apt-get install curl -y
 sudo apt-get install git -y
+sudo apt-get install scrcpy -y
 sudo apt-get install virtualbox -y
 sudo apt-get install arduino -y
 sudo apt-get install build-essential -y
