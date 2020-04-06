@@ -48,6 +48,8 @@ wget -c https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb
 # Insomnia
 wget -c https://github-production-release-asset-2e65be.s3.amazonaws.com/56899284/e217bd00-5296-11ea-98da-f03d5d4bdcc8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200406%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200406T233856Z&X-Amz-Expires=300&X-Amz-Signature=a13dc558b352805217cf035a660736ba688ce406744e7cdbdf095177355ffc4c&X-Amz-SignedHeaders=host&actor_id=39351781&response-content-disposition=attachment%3B%20filename%3Dinsomnia_7.1.1_amd64.deb&response-content-type=application%2Foctet-stream
 sudo dpkg -i *.deb
+# VisualStudioCode
+wget -c https://az764295.vo.msecnd.net/stable/0ba0ca52957102ca3527cf479571617f0de6ed50/code_1.43.2-1585036376_amd64.deb
 cd ..
 rm -Rf softwares
 
