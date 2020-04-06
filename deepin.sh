@@ -10,6 +10,11 @@ sudo rm /var/cache/apt/archives/lock;
 wget -c https://raw.githubusercontent.com/williamtorres1/ShellScript/master/add-apt-repository
 sudo mv add-apt-repository /usr/sbin && sudo chmod o+x /usr/sbin/add-apt-repository && sudo chown root:root /usr/sbin/add-apt-repository
 
+# Node
+sudo curl -sL https://deb.nodesource.com/setup_12.x | bash -
+# Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 # Adicionando novos repositórios
 sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -19,6 +24,9 @@ sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 
 sudo apt-get update
 
+sudo apt-get install -y nodejs
+sudo apt-get install --no-install-recommends yarn -y
+sudo apt-get install openjdk-8-jdk -y
 sudo apt-get install curl -y
 sudo apt-get install git -y
 sudo apt-get install scrcpy -y
@@ -44,17 +52,8 @@ cd ..
 rm -Rf softwares
 
 # Ambiente React Native
-sudo curl -sL https://deb.nodesource.com/setup_12.x | bash -
-#Para instalar o Yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update
-sudo apt-get install -y nodejs
-sudo apt-get install --no-install-recommends yarn
-sudo apt-get install openjdk-8-jdk
 sudo npm install -g react-native-cli
 sudo npm install -g expo-cli
-
 mkdir /home/${USER}/Android
 mkdir /home/${USER}/Android/Sdk
 cd /home/${USER}/Android/Sdk
