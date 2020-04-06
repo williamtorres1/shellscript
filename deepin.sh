@@ -31,15 +31,6 @@ sudo apt-get install qbittorrent -y
 sudo apt-get install g++ -y
 sudo apt-get install kdenlive -y
 
-# Instalando programas via snap
-sudo apt install snapd -y
-sudo snap install code --classic
-sudo snap install insomnia
-sudo snap install vlc
-sudo snap install spotify
-sudo snap install photogimp
-sudo snap install firefox
-
 # Fazendo download de programas externos
 mkdir /home/${USER}/Downloads/softwares
 cd /home/${USER}/Downloads/softwares
@@ -53,10 +44,17 @@ cd ..
 rm -Rf softwares
 
 # Ambiente React Native
-sudo snap install node --classic --channel=12
-sudo npm install -g react-native-cli
+sudo curl -sL https://deb.nodesource.com/setup_12.x | bash -
+#Para instalar o Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+sudo apt-get install -y nodejs
+sudo apt-get install --no-install-recommends yarn
 sudo apt-get install openjdk-8-jdk
+sudo npm install -g react-native-cli
 sudo npm install -g expo-cli
+
 mkdir /home/${USER}/Android
 mkdir /home/${USER}/Android/Sdk
 cd /home/${USER}/Android/Sdk
@@ -69,4 +67,6 @@ echo "export PATH=$PATH:$ANDROID_HOME/tools" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ./.bashrc
 ~/Android/Sdk/tools/bin/sdkmanager "platform-tools" "platforms;android-27" "build-tools;27.0.3" -y
 
+sudo apt-get update
+sudo apt-get upgrade -y
 reboot
