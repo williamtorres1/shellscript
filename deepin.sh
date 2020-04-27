@@ -10,6 +10,8 @@ sudo rm /var/cache/apt/archives/lock;
 wget -c https://raw.githubusercontent.com/williamtorres1/ShellScript/master/add-apt-repository
 sudo mv add-apt-repository /usr/sbin && sudo chmod o+x /usr/sbin/add-apt-repository && sudo chown root:root /usr/sbin/add-apt-repository
 
+sudo apt-get install curl -y
+
 # Node
 sudo curl -sL https://deb.nodesource.com/setup_12.x | bash -
 # Yarn
@@ -25,12 +27,14 @@ sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 sudo apt-get update
 
 sudo apt-get install -y nodejs
+sudo apt install qemu-kvm -y
+sudo adduser $USER kvm
 sudo apt-get install --no-install-recommends yarn -y
 sudo apt-get install openjdk-8-jdk -y
 sudo apt-get install insomnia -y
-sudo apt-get install curl -y
+sudo apt-get install gcc-multilib lib32z1 lib32stdc++6 -y
 sudo apt-get install git -y
-sudo apt-get install scrcpy -y
+#sudo apt-get install scrcpy -y
 sudo apt-get install virtualbox -y
 sudo apt-get install arduino -y
 sudo apt-get install build-essential -y
