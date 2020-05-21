@@ -23,11 +23,13 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo add-apt-repository ppa:atareao/telegram
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable
+sudo add-apt-repository ppa:ehbello/fritzing
 
 sudo apt-get update
 
 sudo apt-get install -y nodejs
 sudo apt install qemu-kvm -y
+sudo apt-get install fritzing -y
 sudo adduser $USER kvm
 sudo apt-get install --no-install-recommends yarn -y
 sudo apt-get install openjdk-8-jdk -y
