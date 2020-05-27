@@ -30,6 +30,15 @@ echo
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
+# Insomnia
+echo
+echo ">> Adicionando repositório Insomnia"
+echo
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+    | sudo apt-key add -
+
 # Adicionando novos repositórios
 echo
 echo ">> Adicionando novos repositórios ppa"
@@ -44,6 +53,7 @@ echo
 
 sudo apt-get update
 
+sudo apt --fix-broken install -y
 echo
 echo ">> Instalando Node.JS"
 echo
@@ -69,6 +79,11 @@ echo ">> Instalando jdk8"
 echo
 sudo apt-get install openjdk-8-jdk -y
 sudo apt-get install gcc-multilib lib32z1 lib32stdc++6 -y
+
+echo
+echo ">> Baixando Imsomnia"
+echo
+sudo apt-get install insomnia -y
 
 echo
 echo ">> Instalando git"
@@ -99,18 +114,13 @@ sudo apt-get install menulibre -y
 #sudo apt-get install kdenlive -y
 
 # Fazendo download de programas externos
-mkdir /home/${USER}/Downloads/softwares
-cd /home/${USER}/Downloads/softwares
+mkdir /home/william/Downloads/softwares
+cd /home/william/Downloads/softwares
 # Discord
 echo
 echo ">> Baixando Discord"
 echo
 wget -c https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb
-# Insomnia
-echo
-echo ">> Baixando Imsomnia"
-echo
-wget -c https://github-production-release-asset-2e65be.s3.amazonaws.com/56899284/e217bd00-5296-11ea-98da-f03d5d4bdcc8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200527%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200527T201808Z&X-Amz-Expires=300&X-Amz-Signature=aebac78712419d3a087b63a3d29d96c642861bb140a15bd6b647ade2486c90b7&X-Amz-SignedHeaders=host&actor_id=39351781&repo_id=56899284&response-content-disposition=attachment%3B%20filename%3Dinsomnia_7.1.1_amd64.deb&response-content-type=application%2Foctet-stream
 
 # VisualStudioCode
 echo
@@ -121,7 +131,7 @@ wget -c https://az764295.vo.msecnd.net/stable/5763d909d5f12fe19f215cbfdd29a91c0f
 echo
 echo ">> Baixando 4kVideoDownloader"
 echo
-wget -c https://dl.4kdownload.com/app/4kvideodownloader_4.12.0-1_amd64.deb?source=website
+wget -c https://dl.4kdownload.com/app/4kvideodownloader_4.12.0-1_amd64.deb
 
 echo
 echo ">> Instalando arquivos .deb"
@@ -162,6 +172,11 @@ echo
 echo ">> Baixando Driver da Placa de vídeo"
 echo
 wget -c http://us.download.nvidia.com/XFree86/Linux-x86_64/340.108/NVIDIA-Linux-x86_64-340.108.run
+chmod u=rwx NVIDIA-Linux-x86_64-340.108.run
+echo
+echo ">> Instalando driver da placa de vídeo"
+echo
+./NVIDIA-Linux-x86_64-340.108.run
 cd ..
 #rm -Rf softwares
 
@@ -175,9 +190,9 @@ echo
 echo ">> Instalando Expo CLI"
 echo
 sudo npm install -g expo-cli
-mkdir /home/${USER}/Android
-mkdir /home/${USER}/Android/Sdk
-cd /home/${USER}/Android/Sdk
+mkdir /home/william/Android
+mkdir /home/william/Android/Sdk
+cd /home/william/Android/Sdk
 echo
 echo ">> Baixando Android SDK Command line too"
 echo
