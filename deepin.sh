@@ -25,8 +25,6 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 # Adicionando novos repositórios
 echo ">> Adicionando novos repositórios ppa"
 sudo add-apt-repository ppa:openjdk-r/ppa
-sudo add-apt-repository ppa:atareao/telegram
-sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 sudo add-apt-repository ppa:ehbello/fritzing
 sudo add-apt-repository ppa:menulibre-dev/daily
 
