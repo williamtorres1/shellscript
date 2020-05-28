@@ -39,6 +39,11 @@ echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
     | sudo apt-key add -
 
+echo
+echo ">> Adicionando repositório Spotify"
+echo
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 # Adicionando novos repositórios
 echo
 echo ">> Adicionando novos repositórios ppa"
@@ -48,12 +53,11 @@ sudo add-apt-repository ppa:ehbello/fritzing
 sudo add-apt-repository ppa:menulibre-dev/daily
 
 echo
-echo ">> Atualizando"
+echo ">> Atualizando..."
 echo
 
 sudo apt-get update
 
-sudo apt --fix-broken install -y
 echo
 echo ">> Instalando Node.JS"
 echo
@@ -91,6 +95,11 @@ sudo apt-get install git -y
 echo
 
 echo
+echo ">> Instalando spotify"
+echo
+sudo apt-get install spotify-client
+
+echo
 echo ">> Instalando virtualbox"
 sudo apt-get install virtualbox -y
 echo
@@ -111,6 +120,8 @@ echo
 echo ">> Instalando menulibre"
 echo
 sudo apt-get install menulibre -y
+
+sudo apt --fix-broken install -y
 #sudo apt-get install kdenlive -y
 
 # Fazendo download de programas externos
@@ -154,13 +165,28 @@ echo
 wget -c https://downloads.arduino.cc/arduino-1.8.12-linux64.tar.xz
 
 echo
+echo ">> Baixando android studio"
+echo
+wget -c https://r1---sn-bg0ezn7e.gvt1.com/edgedl/android/studio/ide-zips/3.6.3.0/android-studio-ide-192.6392135-linux.tar.gz&mip=2804:2c98:90:8400:f166:8ee7:fb63:7cc&mvi=0&pl=41&shardbypass=yes&redirect_counter=1&cm2rm=sn-pouxgapb5qvncg-j50e7e&req_id=916e02bd6c82dc28&cms_redirect=yes&mm=42&mn=sn-bg0ezn7e&ms=onc&mt=1590673448&mv=u
+
+echo
+echo ">> Baixando mozila firefox"
+echo
+wget -c https://download-installer.cdn.mozilla.net/pub/firefox/releases/76.0.1/linux-x86_64/pt-BR/firefox-76.0.1.tar.bz2
+
+echo
 echo ">> Descompactando..."
 echo
-tar -xvf *.tar.xz
+tar -xvf tsetup.2.1.7.tar.xz
+tar -xvf arduino-1.8.12-linux64.tar.xz
+tar -xvf android-studio-ide-192.6392135-linux.tar.gz
+
+
 echo
 echo ">> Removendo arquivos .tar.xz"
 echo
 rm *.tar.xz
+rm *.tar.gz
 
 echo
 echo ">> Instalando Arduino"
@@ -173,10 +199,10 @@ echo ">> Baixando Driver da Placa de vídeo"
 echo
 wget -c http://us.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run
 chmod u=rwx NVIDIA-Linux-x86_64-440.82.run
-echo
-echo ">> Instalando driver da placa de vídeo"
-echo
-./NVIDIA-Linux-x86_64-440.82.run
+#echo
+#echo ">> Instalando driver da placa de vídeo"
+#echo
+#./NVIDIA-Linux-x86_64-440.82.run
 cd ..
 #rm -Rf softwares
 
@@ -190,16 +216,6 @@ echo
 echo ">> Instalando Expo CLI"
 echo
 sudo npm install -g expo-cli
-mkdir /home/william/Android
-mkdir /home/william/Android/Sdk
-cd /home/william/Android/Sdk
-echo
-echo ">> Baixando Android SDK Command line too"
-echo
-wget -c https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
-unzip commandlinetools-linux-6200805_latest.zip
-rm *.zip
-cd ~
 echo "export ANDROID_HOME=~/Android/Sdk" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/tools" >> ./.bashrc
 echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ./.bashrc
