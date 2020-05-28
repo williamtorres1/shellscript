@@ -82,10 +82,14 @@ echo
 echo ">> Instalando jdk8"
 echo
 sudo apt-get install openjdk-8-jdk -y
+
+echo
+echo ">> Instalando libs gráficas p/ RN"
+echo
 sudo apt-get install gcc-multilib lib32z1 lib32stdc++6 -y
 
 echo
-echo ">> Baixando Imsomnia"
+echo ">> Instalando Imsomnia"
 echo
 sudo apt-get install insomnia -y
 
@@ -143,6 +147,11 @@ echo
 echo ">> Baixando 4kVideoDownloader"
 echo
 wget -c https://dl.4kdownload.com/app/4kvideodownloader_4.12.0-1_amd64.deb
+
+echo
+echo ">> Baixando chrome"
+echo
+wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 echo
 echo ">> Instalando arquivos .deb"
