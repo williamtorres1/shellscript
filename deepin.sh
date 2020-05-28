@@ -171,12 +171,12 @@ cd arduino-1.8.12
 echo
 echo ">> Baixando Driver da Placa de vídeo"
 echo
-wget -c http://us.download.nvidia.com/XFree86/Linux-x86_64/340.108/NVIDIA-Linux-x86_64-340.108.run
-chmod u=rwx NVIDIA-Linux-x86_64-340.108.run
+wget -c http://us.download.nvidia.com/XFree86/Linux-x86_64/440.82/NVIDIA-Linux-x86_64-440.82.run
+chmod u=rwx NVIDIA-Linux-x86_64-440.82.run
 echo
 echo ">> Instalando driver da placa de vídeo"
 echo
-./NVIDIA-Linux-x86_64-340.108.run
+./NVIDIA-Linux-x86_64-440.82.run
 cd ..
 #rm -Rf softwares
 
