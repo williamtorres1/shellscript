@@ -2,7 +2,7 @@ sudo apt-get install curl -y
 echo
 echo "Instalando curl"
 echo
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 echo
 echo ">>> Adicionando repositório Node"
 echo
