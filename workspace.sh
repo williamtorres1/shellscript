@@ -53,7 +53,7 @@ yarn global add expo-cli
 
 echo
 echo ">>> Instalando JDK 8"
-sudo apt-get install openjdk-8-jdk
+sudo apt-get install openjdk-8-jdk -y
 
 echo
 echo ">>> Versão do Java"
