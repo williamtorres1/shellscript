@@ -101,7 +101,7 @@ echo
 echo ">>> Configurações git"
 echo
 git config --global user.name "William Torres"
-git config --global user.email contatowilliamtorres@gmail.com
+git config --global user.email "contatowilliamtorres@gmail.com"
 
 echo
 echo ">>> Instalando zsh"
