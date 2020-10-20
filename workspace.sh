@@ -57,15 +57,6 @@ echo ">>> Versão do yarn"
 echo
 
 echo
-echo ">>> Instalando React Native"
-echo
-sudo yarn global add react-native-cli
-echo
-react-native -v
-echo ">>> Versão do React Native CLI"
-echo
-
-echo
 echo ">>> Instalando expo"
 yarn global add expo-cli
 
