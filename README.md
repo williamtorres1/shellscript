@@ -1,22 +1,21 @@
-# Sheel Script
+# Shell Script
 
-ShellScript para configurar automaticamente o linux mint após a instalação, e configurar para desenvolver aplicativos com react native.
+My shell scripts to configure my development environment
 
-Os programas que serão instalados serão o seguinte:
+In `workspace.sh` will install the following programs, packages...
 
-- Visual Studio Code
+- Curl
+- Node
+- Yarn
+- JDK 8
 - Insomnia
+- Beekeeper Studio
+- Expo
+- KVM
 - Git
-- Arduino IDE
-- GCC
-- VirtualBox
-- GIMP
-- VLC
+- ZSH
+- Fira Code
 - Discord
-- Spotify
 - Chrome
-- Telegram
-- Shutter
-- qbittorrent
-
-
+- DBeaver
+- Visual Studio Code

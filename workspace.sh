@@ -30,9 +30,16 @@ wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
     | sudo apt-key add -
 
 echo
+echo ">>> Instalando Beekeeper Studio"
+echo
+# Install BKP Studio GPG key
+wget --quiet -O - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
+# add BKP Studio repo to apt lists directory
+echo "deb https://dl.bintray.com/beekeeper-studio/releases disco main" | sudo tee /etc/apt/sources.list.d/beekeeper-studio.list
+
+echo
 echo ">>> Atualizando repositórios"
 sudo apt-get update
-
 
 echo
 echo ">>> Instalando node"
@@ -95,6 +102,46 @@ git config --global user.name "William Torres"
 git config --global user.email "contatowilliamtorres@gmail.com"
 
 echo
+echo ">>> Instalando Beekeeper Studio"
+echo
+sudo apt install beekeeper-studio -y
+
+
+echo
+echo ">>> Instalando fira-code"
+echo
+sudo apt install fonts-firacode -y
+echo
+echo ">>> Baixando Discord"
+echo
+wget -c https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb
+
+
+echo
+echo ">>> Baixando Chrome"
+echo
+wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+
+echo
+echo ">>> Baixando DBeaver"
+echo
+wget -c https://dbeaver.io/files/7.2.3/dbeaver-ce_7.2.3_amd64.deb
+
+
+
+echo
+echo ">>> Baixando Visual Studio Code"
+echo
+wget -c https://az764295.vo.msecnd.net/stable/d2e414d9e4239a252d1ab117bd7067f125afd80a/code_1.50.1-1602600906_amd64.deb
+
+echo
+echo ">>> Instalando todos os .deb"
+sudo dpkg -i *.deb
+
+rm *.deb
+
+echo
 echo ">>> Instalando zsh"
 echo
 sudo apt install zsh -y
@@ -107,7 +154,7 @@ zsh --version
 echo
 echo ">>> Make it your default shell"
 echo
-sudo chsh -s $(which zsh) -y
+sudo chsh -s $(which zsh)
 
 echo
 echo ">>> Instalando oh-my-zsh"
@@ -128,29 +175,3 @@ echo ">>> Now Set ZSH_THEME="spaceship" in your .zshrc."
 echo
 echo
 
-echo
-echo ">>> Instalando fira-code"
-echo
-sudo apt install fonts-firacode -y
-echo
-echo ">>> Baixando Discord"
-echo
-wget -c https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb
-
-echo
-echo ">>> Instalando Discord"
-echo
-sudo dpkg -i discord-0.0.12.deb
-
-echo
-echo ">>> Baixando Chrome"
-echo
-wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-
-echo
-echo ">>> Instalando Chrome"
-echo
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-rm *.deb
