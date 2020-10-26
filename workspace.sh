@@ -166,6 +166,11 @@ sudo dpkg -i *.deb
 rm *.deb
 
 echo
+echo ">>> Preventing error  ENOSPC: System limit for number of file watchers reached, watch"
+echo 
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+echo
 echo ">>> Instalando zsh"
 echo
 sudo apt install zsh -y
