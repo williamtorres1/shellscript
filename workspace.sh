@@ -111,6 +111,30 @@ echo
 echo ">>> Instalando fira-code"
 echo
 sudo apt install fonts-firacode -y
+
+echo
+echo ">>> Instalando Docker"
+echo
+sudo apt remove docker docker-engine docker.io -y
+sudo apt install docker.io -y
+
+echo
+echo ">>> Iniciar o docker junto ao sistema"
+echo
+sudo systemctl start docker
+sudo systemctl enable docker
+
+echo
+echo ">>> Adicionando permissões de sudo ao docker"
+echo
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+echo
+echo ">>> Logout and login back, then run"
+echo
+echo "newgrp docker"
+
 echo
 echo ">>> Baixando Discord"
 echo
