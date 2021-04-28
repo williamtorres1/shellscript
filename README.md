@@ -14,8 +14,9 @@ In `workspace.sh` will install the following programs, packages...
 - KVM
 - Git
 - ZSH
-- Fira Code
 - Discord
 - Chrome
+- Vivaldi
 - DBeaver
 - Visual Studio Code
+- Android Studio
