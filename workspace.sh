@@ -117,6 +117,16 @@ wget -c https://az764295.vo.msecnd.net/stable/3c4e3df9e89829dce27b7b5c24508306b1
 printf "\n >>> Instalando todos os .deb\n"
 sudo dpkg -i *.deb
 
+printf "\n >>> Baixando Watchman"
+wget -c https://github.com/facebook/watchman/releases/download/v2021.07.05.00/watchman-v2021.07.05.00-linux.zip
+unzip watchman-v2021.07.05.00-linux.zip
+cd watchman-v2021.07.05.00-linux
+sudo mkdir -p /usr/local/{bin,lib} /usr/local/var/run/watchman;
+sudo cp bin/* /usr/local/bin;
+sudo cp lib/* /usr/local/lib
+sudo chmod 755 /usr/local/bin/watchman
+sudo chmod 2777 /usr/local/var/run/watchman
+
 printf "\n >>> Instalando expo\n"
 yarn global add expo-cli
 
