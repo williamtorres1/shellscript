@@ -117,7 +117,7 @@ wget -c https://az764295.vo.msecnd.net/stable/3c4e3df9e89829dce27b7b5c24508306b1
 printf "\n >>> Instalando todos os .deb\n"
 sudo dpkg -i *.deb
 
-printf "\n >>> Baixando Watchman"
+printf "\n >>> Baixando Watchman\n"
 wget -c https://github.com/facebook/watchman/releases/download/v2021.07.05.00/watchman-v2021.07.05.00-linux.zip
 unzip watchman-v2021.07.05.00-linux.zip
 cd watchman-v2021.07.05.00-linux
@@ -138,5 +138,8 @@ sudo adduser $USER kvm
 
 printf "\n >>> Baixando android studio\n"
 wget -c https://r2---sn-bg0ezn7z.gvt1.com/edgedl/android/studio/ide-zips/4.1.3.0/android-studio-ide-201.7199119-linux.tar.gz?mh=QN&mvi=2&pl=24&shardbypass=yes&redirect_counter=1&cm2rm=sn-pouxgapb5qvncg-j50e7l&req_id=6b940ead4e885c5d&cms_redirect=yes&mip=170.247.211.108&mm=42&mn=sn-bg0ezn7z&ms=onc&mt=1619644559&mv=u
+
+printf "\n >>> Baixando flipper\n"
+wget -c https://www.facebook.com/fbflipper/public/linux
 
 exit
